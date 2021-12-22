@@ -12,7 +12,7 @@ import notifications from "../../assets/JsonData/notification.json";
 
 import user_image from "../../assets/images/arthur.jpg";
 
-import user_menu from "../../assets/JsonData/user-menus";
+import user_menu from "../../assets/JsonData/user-menus.json";
 
 const curr_user = {
   display_name: "Arthur Yan",
