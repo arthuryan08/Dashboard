@@ -7,6 +7,7 @@ import "./sidebar.css";
 import logo from "../../assets/images/logo.svg";
 
 import sidebar_items from "../../assets/JsonData/sidebar_routes.json";
+import { useHistory } from "react-router-dom";
 
 const SidebarItem = (props) => {
   const active = props.active ? "active" : "";
@@ -25,9 +26,14 @@ const SideBarDashboard = (props) => {
   const activeItem = sidebar_items.findIndex(
     (item) => item.route === props.location.pathname
   );
+  const history = useHistory();
+
+  const handleBack = () => {
+    history.push("/");
+  };
   return (
     <div className="sidebar">
-      <div className="sidebar__logo">
+      <div className="sidebar__logo" onClick={handleBack}>
         <img src={logo} alt="company logo" />
       </div>
       {sidebar_items.map((item, index) => (
